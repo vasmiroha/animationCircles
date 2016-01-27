@@ -1,0 +1,51 @@
+.hockey_semaphore {
+    position: relative;
+    margin: 0 auto;
+}
+
+.hockey_semaphore_item-wrapper {
+    position: absolute;
+}
+
+.hockey_semaphore_item {
+    display: block;
+    float: left;
+}
+
+.hockey_semaphore_item_outer-circle {
+    position: relative;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    width: 45px;
+    height: 45px;
+    transform: translate3d(-50%, -50%, 0);
+    text-transform: uppercase;
+
+}
+
+.hockey_semaphore_item_outer-circle:before {
+    content: attr(data-title);
+    color:black;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(-50%,-50%, 0);
+}
+.hockey_semaphore_item_outer-circle[data-position="top"]:before {
+    top: -50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.hockey_semaphore_item_outer-circle[data-position="right"]:before {
+    right: -200%;
+}
+.hockey_semaphore_item_outer-circle[data-position="left"]:before {
+    left: -100%;
+}
+
+.hockey_semaphore_item_outer-circle[data-position="bottom"]:before {
+    top: 100%;
+    left: 50%;
+    transform: translate3d(-50%, 50%, 0);
+}

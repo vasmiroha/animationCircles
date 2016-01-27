@@ -1,0 +1,68 @@
+<style>
+/*firefox*/
+@keyframes big_circle {
+	  {{keyFrames.firstStep}}% {
+		width: 80px;
+		height: 80px;
+	  }
+	  {{keyFrames.secondStep}}% {
+		width: 45px;
+		height: 45px;
+	  }
+	}
+
+@keyframes border_anim {
+		{{keyFrames.firstStep}}% {
+			box-shadow: 0 0 5px 10px ;
+		}
+		{{keyFrames.secondStep}}% {
+			box-shadow: 0 0 0 0 ;
+		}
+		100% {
+			box-shadow: 0 0 0 0 ;
+		}
+	}
+
+/*firefox*/
+/*chrome*/
+	@-webkit-keyframes big_circle {
+		{{keyFrames.firstStep}}% {
+			width: 80px;
+			height: 80px;
+		}
+		{{keyFrames.secondStep}}% {
+			width: 45px;
+			height: 45px;
+		}
+	}
+
+	@-webkit-keyframes border_anim {
+		{{keyFrames.firstStep}}% {
+			box-shadow: 0 0 0 10px ;
+		}
+		{{keyFrames.secondStep}}% {
+			box-shadow: 0 0 0 0 ;
+		}
+		100% {
+			box-shadow: 0 0 0 0 ;
+		}
+	}
+/*chrome*/
+</style>
+
+{{#each result}}
+
+	<div class="hockey_semaphore_item-wrapper" style="left:{{left}};top:{{top}}">
+
+		<!--big_circle-->
+		<div class="hockey_semaphore_item_outer-circle" data-title="{{title}}" data-position="{{position}}" style="background:rgb({{background.red}},{{background.green}},{{background.blue}});
+		  color:rgba({{background.red}},{{background.green}},{{background.blue}},{{background.opacity}});
+		  box-shadow: 0 0 2px 10px;
+		  animation: big_circle {{animationDuration}}s linear infinite,
+		             border_anim {{animationDuration}}s linear infinite;
+		  -webkit-animation-delay: {{animationDelay}};
+		  -moz-animation-delay: {{animationDelay}};
+   		   animation-delay: {{animationDelay}};" ></div>
+
+	</div>
+{{/each}}
